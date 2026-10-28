@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>PT Solusi Bangun Indonesia Tbk</title>
+  <meta name="description" content="PT Solusi Bangun Indonesia Tbk menyediakan produk material konstruksi, solusi beton, semen, agregat, dan komitmen terhadap pembangunan berkelanjutan di Indonesia.">
+  <meta name="keywords" content="Solusi Bangun Indonesia, semen, beton, agregat, konstruksi, Indonesia, berkelanjutan">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --brand-green: #1d6f4d;
+      --brand-green-deep: #114b38;
+      --brand-green-soft: #edf8f1;
+      --brand-olive: #dfeee5;
+      --brand-ink: #1a2b24;
+      --brand-muted: #546b60;
+      --brand-surface: #ffffff;
+      --brand-panel: #f5faf7;
+      --brand-gold: #c2a76a;
+    }
+
+    body {
+      background: #fff;
+    }
+
+    .header {
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(17,75,56,0.08);
+    }
+
+    .logo {
+      gap: 12px;
+    }
+
+    .brand-logo-img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      border-radius: 14px;
+      background: #fff;
+      padding: 5px;
+      box-shadow: 0 10px 20px rgba(17,75,56,0.08);
+    }
+
+    .header .top-row .logo .sitename {
+      font-size: clamp(1rem, 1.4vw, 1.6rem);
+      color: var(--brand-ink);
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .navmenu a {
+      color: var(--brand-ink);
+      font-weight: 600;
+    }
+
+    .navmenu a.active,
+    .navmenu a:hover {
+      color: var(--brand-green);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0f3d2e 0%, #1d5c45 42%, #123e31 100%);
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: #fff;
+      padding: 2rem;
+      border-radius: 26px;
+    }
+
+    .hero-card .eyebrow,
+    .hero-card .eyebrow span {
+      color: #dfeee5;
+      font-weight: 700;
+    }
+
+    .hero-card .lead,
+    .hero-card .mini-stats .stat {
+      color: rgba(255,255,255,0.82);
+    }
+
+    .btn-video,
+    .btn-primary-ghost,
+    .btn-accent,
+    .video-trigger,
+    .video-trigger-inline {
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .btn-primary-ghost,
+    .btn-accent {
+      background: var(--brand-green);
+      color: #fff;
+      border: 1px solid var(--brand-green);
+    }
+
+    .btn-primary-ghost:hover,
+    .btn-accent:hover,
+    .btn-primary-ghost:focus,
+    .btn-accent:focus {
+      background: var(--brand-green-deep);
+      border-color: var(--brand-green-deep);
+      color: #fff;
+    }
+
+    .btn-video,
+    .video-trigger,
+    .video-trigger-inline {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #fff;
+    }
+
+    .play-icon {
+      width: 30px;
+      height: 30px;
+      background: rgba(255,255,255,0.14);
+      border-radius: 50%;
+    }
+
+    .media-stack .media img,
+    .company-portrait,
+    .logo-philosophy,
+    .structure-card img {
+      object-fit: cover;
+      width: 100%;
+      border-radius: 22px;
+    }
+
+    .floating-badge {
+      background: rgba(255,255,255,0.9);
+      border-radius: 999px;
+      color: var(--brand-green-deep);
+      padding: 0.85rem 1.1rem;
+      font-weight: 700;
+    }
+
+    .video-shell {
+      background: #ffffff;
+      border: 1px solid rgba(17,75,56,0.12);
+      border-radius: 28px;
+      padding: 1.1rem;
+      margin: 1.5rem auto 0;
+      max-width: 780px;
+      box-shadow: 0 18px 40px rgba(17,75,56,0.08);
+    }
+
+    .video-shell .video-embed {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(17,75,56,0.12), rgba(17,75,56,0.04));
+      border: 1px solid rgba(17,75,56,0.08);
+      display: grid;
+      place-items: center;
+    }
+
+    .video-shell .video-embed::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(17,75,56,0.12), rgba(17,75,56,0.04));
+      z-index: 0;
+    }
+
+    .video-shell .video-trigger-inline {
+      position: relative;
+      z-index: 1;
+      width: 86px;
+      height: 86px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      background: rgba(17,75,56,0.9);
+      border: 1px solid rgba(255,255,255,0.32);
+      box-shadow: 0 12px 25px rgba(12,20,17,0.2);
+      color: #fff;
+    }
+
+    .video-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .video-fallback {
+      margin-top: 1rem;
+      background: rgba(17,75,56,0.04);
+      border: 1px solid rgba(17,75,56,0.08);
+      border-radius: 20px;
+      padding: 1rem;
+      color: var(--brand-ink);
+    }
+
+    .featured-services .section-title,
+    .about .section-title,
+    .structure .section-title,
+    .contact .section-title {
+      margin-bottom: 2rem;
+    }
+
+    .product-item {
+      border: 1px solid rgba(35,35,35,0.08);
+      border-radius: 24px;
+      box-shadow: 0 18px 38px rgba(17,17,17,0.04);
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .product-visual {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(17,17,17,0.05);
+      background: #f7f3ef;
+    }
+
+    .product-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-item .icon {
+      background: rgba(29,111,77,0.08);
+      color: var(--brand-green);
+    }
+
+    .showcase-main {
+      border-radius: 24px;
+      overflow: hidden;
+    }
+
+    .company-portrait {
+      height: 420px;
+    }
+
+    .badge-note {
+      background: #fff;
+      color: var(--brand-ink);
+      border-left: 4px solid var(--brand-green);
+    }
+
+    .feature-item {
+      background: rgba(245,242,238,0.8);
+      border-radius: 18px;
+      padding: 1rem;
+    }
+
+    .structure-card,
+    .philosophy-panel {
+      background: #fff;
+      border: 1px solid rgba(17,17,17,0.06);
+      border-radius: 24px;
+      box-shadow: 0 18px 38px rgba(17,17,17,0.04);
+      padding: 1.25rem;
+    }
+
+    .structure-card h3,
+    .philosophy-panel h3 {
+      margin-bottom: 1rem;
+    }
+
+    .contact {
+      background: linear-gradient(135deg, #0d2f24 0%, #123d2f 100%);
+    }
+
+    #contact,
+    #contact .section-title,
+    #contact .section-title h2,
+    #contact .section-title p,
+    #contact .section-title .eyebrow-label,
+    #contact .section-title .lead,
+    #contact .location-item,
+    #contact .location-item .location-name,
+    #contact .location-item .location-province,
+    #contact .location-detail,
+    #contact .location-detail h3,
+    #contact .location-detail p,
+    #contact .detail-company,
+    #contact .location-detail a {
+      color: #fff;
+    }
+
+    .contact .section-title {
+      margin-bottom: 2rem;
+    }
+
+    .contact .section-title .eyebrow-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      color: #dfeee5;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact .section-title h2,
+    .contact .section-title p,
+    .contact .section-title .eyebrow-label,
+    .contact .section-title .lead,
+    .contact .location-item,
+    .contact .location-detail,
+    .contact .location-detail p,
+    .contact .location-detail h3,
+    .contact .location-detail a,
+    .contact .location-item .location-name,
+    .contact .location-item .location-province,
+    .contact .detail-company {
+      color: #fff;
+    }
+
+    .contact .section-title p,
+    .contact .location-province,
+    .contact .detail-company {
+      max-width: 560px;
+      margin-bottom: 0;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .contact-location-panel {
+      display: grid;
+      grid-template-columns: minmax(270px, 0.9fr) minmax(0, 1.7fr);
+      gap: 1.25rem;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 28px;
+      background: rgba(255,255,255,0.03);
+      padding: 1rem;
+      overflow: hidden;
+    }
+
+    .location-rail {
+      display: flex;
+      flex-direction: column;
+      border-radius: 20px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .location-item {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 0.75rem;
+      text-align: left;
+      border: 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: transparent;
+      padding: 1rem 1rem 1rem 0.85rem;
+      transition: 0.25s ease;
+      color: #fff;
+    }
+
+    .location-item:last-child {
+      border-bottom: 0;
+    }
+
+    .location-item:hover,
+    .location-item:focus {
+      background: rgba(255,255,255,0.04);
+      outline: none;
+    }
+
+    .location-item.active {
+      background: rgba(164, 210, 187, 0.12);
+      box-shadow: inset 3px 0 0 #dfeee5;
+    }
+
+    .location-order {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.72);
+    }
+
+    .location-copy {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .location-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.3;
+    }
+
+    .location-province {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .location-arrow {
+      display: inline-flex;
+      width: 34px;
+      height: 34px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .location-detail {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 22px;
+      background: rgba(255,255,255,0.02);
+      padding: 1.2rem;
+      min-height: 100%;
+    }
+
+    .detail-label {
+      color: #dfeee5;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .location-detail h3 {
+      margin: 0;
+      font-size: clamp(1.5rem, 2vw, 2.1rem);
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .location-detail .detail-company {
+      margin: 0.25rem 0 1rem;
+      color: rgba(255,255,255,0.8);
+      font-weight: 500;
+    }
+
+    .map-embed {
+      position: relative;
+      width: 100%;
+      min-height: 360px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.05);
+      margin-top: 0.5rem;
+    }
+
+    .map-embed iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      border: 0;
+      display: block;
+    }
+
+    .location-actions {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    #contact .location-actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      background: #fff;
+      color: var(--brand-green-deep) !important;
+      border-radius: 999px;
+      padding: 0.8rem 1.1rem;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    #contact .location-actions a:hover,
+    #contact .location-actions a:focus {
+      background: #edf8f1;
+      color: var(--brand-green-deep) !important;
+    }
+
+    .footer .logo .sitename,
+    .footer .sitename {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .footer {
+      background: #123c2f;
+      color: rgba(255,255,255,0.8);
+    }
+
+    @media (max-width: 991px) {
+      .contact-location-panel {
+        grid-template-columns: 1fr;
+      }
+      .brand-logo-img {
+        width: 48px;
+        height: 48px;
+      }
+    }
+  </style>
+
+  <!-- =======================================================
+  * Template Name: FlexBiz
+  * Template URL: https://bootstrapmade.com/flexbiz-bootstrap-business-template/
+  * Updated: Aug 04 2025 with Bootstrap v5.3.7
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header sticky-top">
+    <div class="container-fluid container-xl position-relative">
+
+      <div class="top-row d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="assets/img/logo perusahaan.jfif" alt="Logo PT Solusi Bangun Indonesia" class="brand-logo-img">
+          <h1 class="sitename">PT Solusi Bangun Indonesia Tbk</h1>
+        </a>
+
+        <div class="d-flex align-items-center">
+          <div class="social-links">
+            <a href="https://www.instagram.com/solusibangunid/" class="instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/p/PT-Solusi-Bangun-Indonesia-Tbk-61568142358066/?locale=id_ID" class="facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://id.linkedin.com/company/solusi-bangun-indonesia" class="linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="nav-wrap">
+      <div class="container d-flex justify-content-center position-relative">
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="#hero" class="active">Beranda</a></li>
+            <li><a href="#about">Perusahaan</a></li>
+            <li><a href="#featured-services">Produk</a></li>
+            <li><a href="#structure">Struktur</a></li>
+            <li><a href="#contact">Kontak</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-7">
+            <div class="hero-card shadow-sm" data-aos="fade-right" data-aos-delay="150">
+              <div class="eyebrow d-inline-flex align-items-center mb-3">
+                <i class="bi bi-stars me-2"></i>
+                <span>PT Solusi Bangun Indonesia Tbk</span>
+              </div>
+              <div class="content">
+                <h2 class="display-5 fw-bold mb-3">Membangun Indonesia dengan material konstruksi dan inovasi berkelanjutan.</h2>
+                <p class="lead mb-4">Lebih dari 50 tahun membangun Indonesia dengan keahlian kelas dunia, solusi produk yang handal, dan komitmen terhadap keberlanjutan.</p>
+                <div class="d-flex flex-wrap gap-3">
+                  <a href="#featured-services" class="btn btn-primary-ghost">
+                    <span>Lihat Produk</span>
+                    <i class="bi bi-arrow-right ms-2"></i>
+                  </a>
+                  <a href="#about" class="btn btn-video">
+                    <span class="play-icon d-inline-flex align-items-center justify-content-center me-2">
+                      <i class="bi bi-info-circle"></i>
+                    </span>
+                    <span>Profil SBI</span>
+                  </a>
+                </div>
+                <div class="mini-stats d-flex flex-wrap gap-4 mt-4" data-aos="zoom-in" data-aos-delay="250">
+                  <div class="stat d-flex align-items-center">
+                    <i class="bi bi-building me-2"></i>
+                    <span>50+ Tahun</span>
+                  </div>
+                  <div class="stat d-flex align-items-center">
+                    <i class="bi bi-geo-alt me-2"></i>
+                    <span>3 Lokasi Utama</span>
+                  </div>
+                  <div class="stat d-flex align-items-center">
+                    <i class="bi bi-shield-check me-2"></i>
+                    <span>Solusi Berkelanjutan</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="media-stack" data-aos="zoom-in" data-aos-delay="200">
+              <figure class="media primary shadow-sm">
+                <img src="assets/img/pt sib.jfif" class="img-fluid" alt="PT Solusi Bangun Indonesia">
+              </figure>
+              <figure class="media secondary shadow-sm">
+                <img src="assets/img/pt sib.jfif" class="img-fluid" alt="PT Solusi Bangun Indonesia">
+              </figure>
+              <div class="floating-badge d-flex align-items-center shadow-sm" data-aos="fade-down" data-aos-delay="300">
+                <i class="bi bi-award me-2"></i>
+                <span>Inovasi untuk Indonesia</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="container mt-5">
+        <div class="video-shell" data-aos="fade-up" data-aos-delay="200">
+          <div class="video-embed" aria-live="polite">
+            <button type="button" class="video-trigger-inline" data-embed="https://www.instagram.com/reel/DZq7GQgB9ld/embed/" aria-label="Mainkan video perusahaan">
+              <i class="bi bi-play-fill"></i>
+            </button>
+          </div>
+          <div class="video-fallback d-none">
+            <p>Video tidak dapat ditampilkan di dalam halaman. Anda tetap dapat menontonnya langsung di Instagram.</p>
+            <a href="https://www.instagram.com/reel/DZq7GQgB9ld/" target="_blank" rel="noreferrer" class="btn btn-primary-ghost">Buka di Instagram</a>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- Featured Services Section -->
+    <section id="featured-services" class="featured-services section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Produk &amp; Layanan</h2>
+        <p>Solusi material konstruksi untuk kebutuhan infrastruktur, bangunan, dan masa depan yang berkelanjutan.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item product-item">
+              <div class="product-visual">
+                <img src="assets/img/semen.jpeg" alt="Produk semen PT Solusi Bangun Indonesia" loading="lazy">
+              </div>
+              <div class="p-4">
+                <div class="icon">
+                  <i class="bi bi-building"></i>
+                </div>
+                <h3>Semen</h3>
+                <p>Produk semen berkualitas untuk kebutuhan konstruksi umum, infrastruktur, serta bangunan komersial dan residensial.</p>
+                <div class="card-links">
+                  <a href="#contact" class="link-item">
+                    Konsultasi
+                    <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item product-item">
+              <div class="product-visual">
+                <img src="assets/img/beton.jfif" alt="Produk beton PT Solusi Bangun Indonesia" loading="lazy">
+              </div>
+              <div class="p-4">
+                <div class="icon">
+                  <i class="bi bi-bricks"></i>
+                </div>
+                <h3>Beton</h3>
+                <p>Solusi beton siap pakai dan bahan bangunan dengan performa yang konsisten untuk proyek skala besar maupun spesifik.</p>
+                <div class="card-links">
+                  <a href="#contact" class="link-item">
+                    Konsultasi
+                    <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item product-item">
+              <div class="product-visual">
+                <img src="assets/img/agregat.jfif" alt="Produk agregat PT Solusi Bangun Indonesia" loading="lazy">
+              </div>
+              <div class="p-4">
+                <div class="icon">
+                  <i class="bi bi-diagram-3"></i>
+                </div>
+                <h3>Agregat</h3>
+                <p>Agregat yang dibutuhkan untuk campuran beton, jalan, dan kebutuhan konstruksi lainnya dengan kualitas terukur.</p>
+                <div class="card-links">
+                  <a href="#contact" class="link-item">
+                    Konsultasi
+                    <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item product-item">
+              <div class="icon">
+                <i class="bi bi-leaf"></i>
+              </div>
+              <h3>Keberlanjutan</h3>
+              <p>Komitmen pada praktik operasional yang ramah lingkungan, efisiensi sumber daya, dan pengelolaan yang berkelanjutan.</p>
+              <div class="card-links">
+                <a href="#about" class="link-item">
+                  Selengkapnya
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item product-item">
+              <div class="icon">
+                <i class="bi bi-graph-up-arrow"></i>
+              </div>
+              <h3>Inovasi &amp; Teknologi</h3>
+              <p>Pengembangan produk dan proses yang mendukung kualitas, efisiensi operasional, serta kepuasan pelanggan dan mitra.</p>
+              <div class="card-links">
+                <a href="#contact" class="link-item">
+                  Konsultasi
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item product-item">
+              <div class="icon">
+                <i class="bi bi-people"></i>
+              </div>
+              <h3>Pelayanan Pelanggan</h3>
+              <p>Kami mendukung pelanggan melalui solusi teknis, koordinasi distribusi, dan pelayanan yang responsif di berbagai wilayah.</p>
+              <div class="card-links">
+                <a href="#contact" class="link-item">
+                  Hubungi Kami
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Featured Services Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Perusahaan</h2>
+        <p>PT Solusi Bangun Indonesia Tbk merupakan perusahaan yang fokus pada produk bahan bangunan dan solusi konstruksi yang mendukung pembangunan nasional.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-4 align-items-stretch">
+
+          <div class="col-lg-5 order-lg-2" data-aos="fade-left" data-aos-delay="200">
+            <aside class="showcase">
+              <figure class="showcase-main">
+                <img src="assets/img/pt sib.jfif" alt="PT Solusi Bangun Indonesia" class="img-fluid company-portrait">
+                <figcaption class="badge-note" data-aos="zoom-in" data-aos-delay="350">
+                  <i class="bi bi-graph-up-arrow"></i>
+                  <div>
+                    <strong>Solusi untuk Indonesia</strong>
+                    <small>Material konstruksi dan inovasi berkelanjutan.</small>
+                  </div>
+                </figcaption>
+              </figure>
+            </aside>
+          </div>
+
+          <div class="col-lg-7 order-lg-1" data-aos="fade-right" data-aos-delay="200">
+            <article class="intro-card">
+              <div class="intro-head">
+                <span class="kicker"><i class="bi bi-stars me-1"></i>Profil</span>
+                <h2>Membangun infrastruktur dan nilai jangka panjang untuk negeri.</h2>
+              </div>
+
+              <div class="intro-body">
+                <p class="lead">Dengan pengalaman lebih dari 50 tahun, kami berfokus pada pengembangan produk dan layanan yang mendukung kebutuhan pembangunan di Indonesia.</p>
+                <p>Kami hadir melalui berbagai solusi material konstruksi, termasuk semen, beton, agregat, dan pendekatan operasional yang berorientasi pada keandalan, kualitas, serta keberlanjutan.</p>
+
+                <div class="feature-list row gy-3">
+                  <div class="col-md-6" data-aos="fade-up" data-aos-delay="250">
+                    <div class="feature-item">
+                      <i class="bi bi-shield-check"></i>
+                      <div class="text">
+                        <h6>Kualitas Terukur</h6>
+                        <p>Produk dan proses yang dirancang untuk kinerja yang konsisten serta kepuasan pelanggan.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-item">
+                      <i class="bi bi-palette2"></i>
+                      <div class="text">
+                        <h6>Komitmen ESG</h6>
+                        <p>Integrasi prinsip keberlanjutan dalam operasional, inovasi, dan pengelolaan lingkungan.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="metric-band" data-aos="fade-up" data-aos-delay="350">
+                  <div class="metric">
+                    <span class="value">50+</span>
+                    <span class="label">Tahun</span>
+                  </div>
+                  <div class="divider"></div>
+                  <div class="metric">
+                    <span class="value">3</span>
+                    <span class="label">Lokasi Utama</span>
+                  </div>
+                  <div class="divider"></div>
+                  <div class="metric">
+                    <span class="value">100%</span>
+                    <span class="label">Fokus Bahan Bangunan</span>
+                  </div>
+                </div>
+
+                <div class="actions d-flex flex-wrap align-items-center gap-3" data-aos="fade-up" data-aos-delay="400">
+                  <a href="#featured-services" class="btn btn-accent">
+                    <i class="bi bi-arrow-right-circle me-1"></i> Jelajahi Produk
+                  </a>
+                  <a href="#contact" class="link-more">
+                    Hubungi kami <i class="bi bi-arrow-right-short"></i>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <section id="structure" class="structure section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Struktur Organisasi &amp; Grup</h2>
+        <p>Struktur perusahaan dan grup yang mendukung operasional, pengelolaan, dan arah strategi bisnis kami.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-6">
+            <div class="structure-card">
+              <h3>Struktur Organisasi</h3>
+              <img src="assets/img/struktur organisasi.png" alt="Struktur Organisasi PT Solusi Bangun Indonesia" class="img-fluid rounded-4 shadow-sm">
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="structure-card">
+              <h3>Struktur Grup</h3>
+              <img src="assets/img/srruktur grup.png" alt="Struktur Grup PT Solusi Bangun Indonesia" class="img-fluid rounded-4 shadow-sm">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mt-5" data-aos="fade-up" data-aos-delay="150">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-5">
+            <img src="assets/img/filosofi logo.png" alt="Filosofi Logo PT Solusi Bangun Indonesia" class="img-fluid logo-philosophy">
+          </div>
+          <div class="col-lg-7">
+            <div class="philosophy-panel">
+              <h3>Logo &amp; Filosofi Logo</h3>
+              <p>Logo perusahaan mencerminkan semangat kekuatan, keberlanjutan, dan inovasi dalam membangun masa depan Indonesia. Elemen visual dirancang untuk merepresentasikan komitmen terhadap pertumbuhan yang terukur, kolaborasi, dan solusi berkelanjutan.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Arsitektur Keunggulan SBI -->
+    <section id="clients" class="clients section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Komitmen SBI untuk Konstruksi Indonesia</h2>
+        <p>Kami menggabungkan pengalaman panjang, kualitas produk yang terukur, dan pendekatan yang berkelanjutan untuk mendukung setiap tahap pembangunan.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item product-item h-100">
+              <div class="product-visual">
+                <img src="assets/img/keberlanjutan.jfif" alt="Komitmen keberlanjutan PT Solusi Bangun Indonesia" loading="lazy">
+              </div>
+              <div class="p-4">
+                <div class="icon"><i class="bi bi-leaf"></i></div>
+                <h3>Keberlanjutan</h3>
+                <p>Komitmen terhadap efisiensi sumber daya, pengelolaan lingkungan, dan inovasi yang menjaga nilai jangka panjang.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="180">
+            <div class="service-item product-item h-100">
+              <div class="product-visual">
+                <img src="assets/img/untuk dashboard.jfif" alt="Operasional dan inovasi PT Solusi Bangun Indonesia" loading="lazy">
+              </div>
+              <div class="p-4">
+                <div class="icon"><i class="bi bi-graph-up-arrow"></i></div>
+                <h3>Operasional Terukur</h3>
+                <p>Kinerja yang konsisten didukung oleh proses, teknologi, dan kolaborasi lintas fungsi untuk memberikan hasil terbaik.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="260">
+            <div class="service-item product-item h-100">
+              <div class="product-visual">
+                <img src="assets/img/pt sib.jfif" alt="PT Solusi Bangun Indonesia" loading="lazy">
+              </div>
+              <div class="p-4">
+                <div class="icon"><i class="bi bi-award"></i></div>
+                <h3>Nilai Bisnis</h3>
+                <p>Filosofi perusahaan mencerminkan kekuatan, kolaborasi, dan komitmen untuk membangun masa depan yang lebih baik.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="340">
+            <div class="service-item product-item h-100">
+              <div class="product-visual">
+                <img src="assets/img/struktur organisasi.png" alt="Struktur organisasi PT Solusi Bangun Indonesia" loading="lazy">
+              </div>
+              <div class="p-4">
+                <div class="icon"><i class="bi bi-diagram-3"></i></div>
+                <h3>Sinergi Organisasi</h3>
+                <p>Struktur organisasi dan grup yang solid memastikan pengelolaan, inovasi, dan strategi berjalan selaras.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section dark-background">
+
+      <div class="container section-title" data-aos="fade-up">
+        <span class="eyebrow-label">Jaringan &amp; Produksi</span>
+        <h2>Lokasi &amp; Kontak</h2>
+        <p>Informasi lokasi operasional dan kontak utama PT Solusi Bangun Indonesia Tbk.</p>
+      </div>
+
+      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+        <div class="contact-location-panel">
+          <div class="location-rail" aria-label="Pilihan lokasi perusahaan">
+            <button type="button" class="location-item active" data-name="Kantor Pusat Jakarta" data-company="PT Solusi Bangun Indonesia Tbk" data-map="https://www.google.com/maps?q=Jakarta%20PT%20Solusi%20Bangun%20Indonesia%20Tbk&output=embed" data-link="https://www.google.com/maps/search/?api=1&query=PT+Solusi+Bangun+Indonesia+Tbk+Jakarta">
+              <span class="location-order">01</span>
+              <span class="location-copy">
+                <span class="location-name">Kantor Pusat Jakarta</span>
+                <span class="location-province">Jakarta, Indonesia</span>
+              </span>
+              <span class="location-arrow"><i class="bi bi-chevron-right"></i></span>
+            </button>
+
+            <button type="button" class="location-item" data-name="Pabrik Cilacap" data-company="PT Solusi Bangun Indonesia Tbk" data-map="https://www.google.com/maps?q=Pabrik%20Cilacap%20Solusi%20Bangun%20Indonesia&output=embed" data-link="https://www.google.com/maps/search/?api=1&query=Pabrik+Cilacap+Solusi+Bangun+Indonesia">
+              <span class="location-order">02</span>
+              <span class="location-copy">
+                <span class="location-name">Pabrik Cilacap</span>
+                <span class="location-province">Cilacap, Jawa Tengah</span>
+              </span>
+              <span class="location-arrow"><i class="bi bi-chevron-right"></i></span>
+            </button>
+
+            <button type="button" class="location-item" data-name="Pabrik Narogong" data-company="PT Solusi Bangun Indonesia Tbk" data-map="https://www.google.com/maps?q=Pabrik%20Narogong%20Solusi%20Bangun%20Indonesia&output=embed" data-link="https://www.google.com/maps/search/?api=1&query=Pabrik+Narogong+Solusi+Bangun+Indonesia">
+              <span class="location-order">03</span>
+              <span class="location-copy">
+                <span class="location-name">Pabrik Narogong</span>
+                <span class="location-province">Narogong, Jawa Barat</span>
+              </span>
+              <span class="location-arrow"><i class="bi bi-chevron-right"></i></span>
+            </button>
+          </div>
+
+          <div class="location-detail" aria-live="polite">
+            <span class="detail-label">Lokasi operasional</span>
+            <h3 id="detail-name">Kantor Pusat Jakarta</h3>
+            <p class="detail-company" id="detail-company">PT Solusi Bangun Indonesia Tbk</p>
+
+            <div class="map-embed">
+              <iframe id="map-frame" title="Kantor Pusat Jakarta" src="https://www.google.com/maps?q=Jakarta%20PT%20Solusi%20Bangun%20Indonesia%20Tbk&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <div class="location-actions">
+              <a id="map-link" href="https://www.google.com/maps/search/?api=1&query=PT+Solusi+Bangun+Indonesia+Tbk+Jakarta" target="_blank" rel="noreferrer"><i class="bi bi-map"></i> Lihat di Google Maps</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer position-relative">
+
+    <div class="container">
+      <div class="row gy-5">
+
+        <div class="col-lg-4">
+          <div class="footer-brand">
+            <a href="index.html" class="logo d-flex align-items-center mb-3">
+              <img src="assets/img/logo perusahaan.jfif" alt="Logo PT Solusi Bangun Indonesia" class="brand-logo-img">
+              <span class="sitename">PT Solusi Bangun Indonesia Tbk</span>
+            </a>
+            <p class="tagline">Membangun Indonesia dengan material konstruksi, inovasi, dan komitmen berkelanjutan.</p>
+
+            <div class="social-links mt-4">
+              <a href="https://www.facebook.com/p/PT-Solusi-Bangun-Indonesia-Tbk-61568142358066/?locale=id_ID" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="https://www.instagram.com/solusibangunid/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="https://id.linkedin.com/company/solusi-bangun-indonesia" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="footer-links-grid">
+            <div class="row">
+              <div class="col-6 col-md-4">
+                <h5>Perusahaan</h5>
+                <ul class="list-unstyled">
+                  <li><a href="#about">Profil</a></li>
+                  <li><a href="#structure">Struktur</a></li>
+                  <li><a href="#featured-services">Produk</a></li>
+                  <li><a href="#contact">Kontak</a></li>
+                </ul>
+              </div>
+              <div class="col-6 col-md-4">
+                <h5>Produk</h5>
+                <ul class="list-unstyled">
+                  <li><a href="#featured-services">Semen</a></li>
+                  <li><a href="#featured-services">Beton</a></li>
+                  <li><a href="#featured-services">Agregat</a></li>
+                  <li><a href="#featured-services">Keberlanjutan</a></li>
+                </ul>
+              </div>
+              <div class="col-6 col-md-4">
+                <h5>Lokasi</h5>
+                <ul class="list-unstyled">
+                  <li><a href="#contact">Jakarta</a></li>
+                  <li><a href="#contact">Cilacap</a></li>
+                  <li><a href="#contact">Narogong</a></li>
+                  <li><a href="#contact">Google Maps</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-2">
+          <div class="footer-cta">
+            <h5>Hubungi</h5>
+            <a href="#contact" class="btn btn-outline">Lihat Lokasi</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="footer-bottom-content">
+              <p class="mb-0">© <span class="sitename">PT Solusi Bangun Indonesia Tbk</span>. All rights reserved.</p>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    (function() {
+      const triggers = document.querySelectorAll('.video-trigger, .video-trigger-inline');
+      const embedHost = document.querySelector('.video-embed');
+      const fallback = document.querySelector('.video-fallback');
+
+      function openVideo(trigger) {
+        if (!embedHost || !trigger) return;
+        const embedUrl = trigger.dataset.embed;
+        if (!embedUrl) return;
+
+        if (!embedHost.dataset.loaded) {
+          const iframe = document.createElement('iframe');
+          iframe.src = embedUrl;
+          iframe.title = 'Instagram Reel';
+          iframe.loading = 'lazy';
+          iframe.allow = 'autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share';
+          iframe.allowFullscreen = true;
+          iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+          embedHost.innerHTML = '';
+          embedHost.appendChild(iframe);
+          embedHost.dataset.loaded = 'true';
+        }
+
+        if (fallback) {
+          fallback.classList.add('d-none');
+        }
+      }
+
+      triggers.forEach(trigger => {
+        trigger.addEventListener('click', function(event) {
+          event.preventDefault();
+          openVideo(this);
+        });
+      });
+
+      if (fallback) {
+        setTimeout(() => {
+          if (!embedHost || !embedHost.dataset.loaded) {
+            fallback.classList.remove('d-none');
+          }
+        }, 2200);
+      }
+
+      const locationButtons = document.querySelectorAll('.location-item');
+      const detailName = document.getElementById('detail-name');
+      const detailCompany = document.getElementById('detail-company');
+      const mapFrame = document.getElementById('map-frame');
+      const mapLink = document.getElementById('map-link');
+
+      if (locationButtons.length && detailName && detailCompany && mapFrame && mapLink) {
+        locationButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            const { name, company, map, link } = this.dataset;
+
+            detailName.textContent = name || 'Lokasi';
+            detailCompany.textContent = company || 'PT Solusi Bangun Indonesia Tbk';
+            mapFrame.src = map || '';
+            mapFrame.title = name || 'Lokasi perusahaan';
+            mapLink.href = link || '#';
+
+            locationButtons.forEach(item => item.classList.toggle('active', item === this));
+          });
+        });
+      }
+    })();
+  </script>
+
+</body>
+
+</html>
