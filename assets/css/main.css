@@ -12,13 +12,512 @@
 # Font & Color Variables
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
+:root {
+      --brand-green: #1d6f4d;
+      --brand-green-deep: #114b38;
+      --brand-green-soft: #edf8f1;
+      --brand-olive: #dfeee5;
+      --brand-ink: #1a2b24;
+      --brand-muted: #546b60;
+      --brand-surface: #ffffff;
+      --brand-panel: #f5faf7;
+      --brand-gold: #c2a76a;
+    }
+
+    body {
+      background: #fff;
+    }
+
+    .header {
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(17,75,56,0.08);
+    }
+
+    .logo {
+      gap: 12px;
+    }
+
+    .brand-logo-img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      border-radius: 14px;
+      background: #fff;
+      padding: 5px;
+      box-shadow: 0 10px 20px rgba(17,75,56,0.08);
+    }
+
+    .header .top-row .logo .sitename {
+      font-size: clamp(1rem, 1.4vw, 1.6rem);
+      color: var(--brand-ink);
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .navmenu a {
+      color: var(--brand-ink);
+      font-weight: 600;
+    }
+
+    .navmenu a.active,
+    .navmenu a:hover {
+      color: var(--brand-green);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0f3d2e 0%, #1d5c45 42%, #123e31 100%);
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: #fff;
+      padding: 2rem;
+      border-radius: 26px;
+    }
+
+    .hero-card .eyebrow,
+    .hero-card .eyebrow span {
+      color: #dfeee5;
+      font-weight: 700;
+    }
+
+    .hero-card .lead,
+    .hero-card .mini-stats .stat {
+      color: rgba(255,255,255,0.82);
+    }
+
+    .btn-video,
+    .btn-primary-ghost,
+    .btn-accent,
+    .video-trigger,
+    .video-trigger-inline {
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .btn-primary-ghost,
+    .btn-accent {
+      background: var(--brand-green);
+      color: #fff;
+      border: 1px solid var(--brand-green);
+    }
+
+    .btn-primary-ghost:hover,
+    .btn-accent:hover,
+    .btn-primary-ghost:focus,
+    .btn-accent:focus {
+      background: var(--brand-green-deep);
+      border-color: var(--brand-green-deep);
+      color: #fff;
+    }
+
+    .btn-video,
+    .video-trigger,
+    .video-trigger-inline {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #fff;
+    }
+
+    .play-icon {
+      width: 30px;
+      height: 30px;
+      background: rgba(255,255,255,0.14);
+      border-radius: 50%;
+    }
+
+    .media-stack .media img,
+    .logo-philosophy,
+    .structure-card img {
+      object-fit: cover;
+      width: 100%;
+      border-radius: 22px;
+    }
+
+    .floating-badge {
+      background: rgba(255,255,255,0.9);
+      border-radius: 999px;
+      color: var(--brand-green-deep);
+      padding: 0.85rem 1.1rem;
+      font-weight: 700;
+    }
+
+    .about .showcase .video-embed {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 4 / 3;
+      margin: 0 auto;
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(17,75,56,0.12), rgba(17,75,56,0.04));
+      border: 1px solid rgba(17,75,56,0.08);
+      display: grid;
+      place-items: center;
+    }
+
+    .about .showcase {
+      height: auto;
+      display: block;
+    }
+
+    .about .showcase .video-embed::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(17,75,56,0.12), rgba(17,75,56,0.04));
+      z-index: 0;
+    }
+
+    .about .showcase .video-trigger-inline {
+      position: relative;
+      z-index: 1;
+      width: 64px;
+      height: 64px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      background: rgba(17,75,56,0.9);
+      border: 1px solid rgba(255,255,255,0.32);
+      box-shadow: 0 12px 25px rgba(12,20,17,0.2);
+      color: #fff;
+    }
+
+    .video-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .video-fallback {
+      margin-top: 1rem;
+      background: rgba(17,75,56,0.04);
+      border: 1px solid rgba(17,75,56,0.08);
+      border-radius: 20px;
+      padding: 1rem;
+      color: var(--brand-ink);
+    }
+
+    .featured-services .section-title,
+    .about .section-title,
+    .structure .section-title,
+    .contact .section-title {
+      margin-bottom: 2rem;
+    }
+
+    .product-item {
+      border: 1px solid rgba(35,35,35,0.08);
+      border-radius: 24px;
+      box-shadow: 0 18px 38px rgba(17,17,17,0.04);
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .product-visual {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(17,17,17,0.05);
+      background: #f7f3ef;
+    }
+
+    .product-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-item .icon {
+      background: rgba(29,111,77,0.08);
+      color: var(--brand-green);
+    }
+
+    .showcase-main {
+      border-radius: 24px;
+      overflow: hidden;
+    }
+
+    .badge-note {
+      background: #fff;
+      color: var(--brand-ink);
+      border-left: 4px solid var(--brand-green);
+    }
+
+    .feature-item {
+      background: rgba(245,242,238,0.8);
+      border-radius: 18px;
+      padding: 1rem;
+    }
+
+    .structure-card,
+    .philosophy-panel {
+      background: #fff;
+      border: 1px solid rgba(17,17,17,0.06);
+      border-radius: 24px;
+      box-shadow: 0 18px 38px rgba(17,17,17,0.04);
+      padding: 1.25rem;
+    }
+
+    .structure-card h3,
+    .philosophy-panel h3 {
+      margin-bottom: 1rem;
+    }
+
+    .contact {
+      background: linear-gradient(135deg, #0d2f24 0%, #123d2f 100%);
+    }
+
+    #contact,
+    #contact .section-title,
+    #contact .section-title h2,
+    #contact .section-title p,
+    #contact .section-title .eyebrow-label,
+    #contact .section-title .lead,
+    #contact .location-item,
+    #contact .location-item .location-name,
+    #contact .location-item .location-province,
+    #contact .location-detail,
+    #contact .location-detail h3,
+    #contact .location-detail p,
+    #contact .detail-company,
+    #contact .location-detail a {
+      color: #fff;
+    }
+
+    .contact .section-title {
+      margin-bottom: 2rem;
+    }
+
+    .contact .section-title .eyebrow-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      color: #dfeee5;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact .section-title h2,
+    .contact .section-title p,
+    .contact .section-title .eyebrow-label,
+    .contact .section-title .lead,
+    .contact .location-item,
+    .contact .location-detail,
+    .contact .location-detail p,
+    .contact .location-detail h3,
+    .contact .location-detail a,
+    .contact .location-item .location-name,
+    .contact .location-item .location-province,
+    .contact .detail-company {
+      color: #fff;
+    }
+
+    .contact .section-title p,
+    .contact .location-province,
+    .contact .detail-company {
+      max-width: 560px;
+      margin-bottom: 0;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .contact-location-panel {
+      display: grid;
+      grid-template-columns: minmax(270px, 0.9fr) minmax(0, 1.7fr);
+      gap: 1.25rem;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 28px;
+      background: rgba(255,255,255,0.03);
+      padding: 1rem;
+      overflow: hidden;
+    }
+
+    .location-rail {
+      display: flex;
+      flex-direction: column;
+      border-radius: 20px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .location-item {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 0.75rem;
+      text-align: left;
+      border: 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: transparent;
+      padding: 1rem 1rem 1rem 0.85rem;
+      transition: 0.25s ease;
+      color: #fff;
+    }
+
+    .location-item:last-child {
+      border-bottom: 0;
+    }
+
+    .location-item:hover,
+    .location-item:focus {
+      background: rgba(255,255,255,0.04);
+      outline: none;
+    }
+
+    .location-item.active {
+      background: rgba(164, 210, 187, 0.12);
+      box-shadow: inset 3px 0 0 #dfeee5;
+    }
+
+    .location-order {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.72);
+    }
+
+    .location-copy {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .location-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.3;
+    }
+
+    .location-province {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .location-arrow {
+      display: inline-flex;
+      width: 34px;
+      height: 34px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .location-detail {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 22px;
+      background: rgba(255,255,255,0.02);
+      padding: 1.2rem;
+      min-height: 100%;
+    }
+
+    .detail-label {
+      color: #dfeee5;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .location-detail h3 {
+      margin: 0;
+      font-size: clamp(1.5rem, 2vw, 2.1rem);
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .location-detail .detail-company {
+      margin: 0.25rem 0 1rem;
+      color: rgba(255,255,255,0.8);
+      font-weight: 500;
+    }
+
+    .map-embed {
+      position: relative;
+      width: 100%;
+      min-height: 360px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.05);
+      margin-top: 0.5rem;
+    }
+
+    .map-embed iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      border: 0;
+      display: block;
+    }
+
+    .location-actions {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    #contact .location-actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      background: #fff;
+      color: var(--brand-green-deep) !important;
+      border-radius: 999px;
+      padding: 0.8rem 1.1rem;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    #contact .location-actions a:hover,
+    #contact .location-actions a:focus {
+      background: #edf8f1;
+      color: var(--brand-green-deep) !important;
+    }
+
+    .footer .logo .sitename,
+    .footer .sitename {
+      color: #163327;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .footer {
+      --font-color: #33463d;
+      background: #fff;
+      color: #33463d;
+    }
+
+    @media (max-width: 991px) {
+      .contact-location-panel {
+        grid-template-columns: 1fr;
+      }
+      .brand-logo-img {
+        width: 48px;
+        height: 48px;
+      }
+    }
 /* Fonts */
 :root {
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Lato",  sans-serif;
   --nav-font: "Inter",  sans-serif;
 }
-
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
