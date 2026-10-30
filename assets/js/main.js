@@ -264,4 +264,127 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  const triggers = document.querySelectorAll('.video-trigger, .video-trigger-inline');
+  const embedHost = document.querySelector('.video-embed');
+  const fallback = document.querySelector('.video-fallback');
+  const instagramTriggers = document.querySelectorAll('.instagram-confirm-trigger');
+  const instagramConfirmation = document.getElementById('instagram-confirmation');
+  const instagramConfirmationCloseButtons = document.querySelectorAll('[data-instagram-confirm-close]');
+  const instagramConfirmationContinue = instagramConfirmation
+    ? instagramConfirmation.querySelector('.instagram-confirmation__continue')
+    : null;
+  let lastInstagramTrigger = null;
+
+  // Fungsi untuk membuka video Instagram
+  function openVideo(trigger) {
+    if (!embedHost || !trigger) return;
+    const embedUrl = trigger.dataset.embed;
+    if (!embedUrl) return;
+
+    if (!embedHost.dataset.loaded) {
+      const iframe = document.createElement('iframe');
+      iframe.src = embedUrl;
+      iframe.title = 'Instagram Reel';
+      iframe.loading = 'lazy';
+      iframe.allow = 'autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share';
+      iframe.allowFullscreen = true;
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+      embedHost.innerHTML = '';
+      embedHost.appendChild(iframe);
+      embedHost.dataset.loaded = 'true';
+    }
+
+    if (fallback) {
+      fallback.classList.add('d-none');
+    }
+  }
+
+  // Mengatur tombol pemutar video
+  triggers.forEach(trigger => {
+    trigger.addEventListener('click', function(event) {
+      event.preventDefault();
+      openVideo(this);
+    });
+  });
+
+  // Menampilkan video alternatif jika embed belum berhasil dimuat
+  if (fallback) {
+    setTimeout(() => {
+      if (!embedHost || !embedHost.dataset.loaded) {
+        fallback.classList.remove('d-none');
+      }
+    }, 2200);
+  }
+
+  // Fungsi untuk menutup pop-up Instagram
+  function closeInstagramConfirmation() {
+    if (!instagramConfirmation || instagramConfirmation.hidden) return;
+
+    instagramConfirmation.classList.remove('is-open');
+    instagramConfirmation.hidden = true;
+    instagramConfirmation.setAttribute('aria-hidden', 'true');
+    if (lastInstagramTrigger) lastInstagramTrigger.focus();
+  }
+
+  // Mengatur tombol untuk membuka pop-up Instagram
+  instagramTriggers.forEach(trigger => {
+    trigger.addEventListener('click', function() {
+      if (!instagramConfirmation) return;
+
+      lastInstagramTrigger = this;
+      instagramConfirmation.hidden = false;
+      instagramConfirmation.setAttribute('aria-hidden', 'false');
+      requestAnimationFrame(() => instagramConfirmation.classList.add('is-open'));
+      instagramConfirmation.querySelector('.instagram-confirmation__close').focus();
+    });
+  });
+
+  // Mengatur tombol penutup pop-up
+  instagramConfirmationCloseButtons.forEach(button => {
+    button.addEventListener('click', closeInstagramConfirmation);
+  });
+
+  // Menutup pop-up melalui klik di luar area atau tombol Escape
+  if (instagramConfirmation) {
+    instagramConfirmation.addEventListener('click', function(event) {
+      if (event.target === instagramConfirmation) closeInstagramConfirmation();
+    });
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' && !instagramConfirmation.hidden) {
+        closeInstagramConfirmation();
+      }
+    });
+  }
+
+  // Menutup pop-up ketika tombol lanjutkan ditekan
+  if (instagramConfirmationContinue) {
+    instagramConfirmationContinue.addEventListener('click', closeInstagramConfirmation);
+  }
+
+  // Mengambil elemen informasi lokasi perusahaan
+  const locationButtons = document.querySelectorAll('.location-item');
+  const detailName = document.getElementById('detail-name');
+  const detailCompany = document.getElementById('detail-company');
+  const mapFrame = document.getElementById('map-frame');
+  const mapLink = document.getElementById('map-link');
+
+  // Mengatur perubahan informasi berdasarkan lokasi yang dipilih
+  if (locationButtons.length && detailName && detailCompany && mapFrame && mapLink) {
+    locationButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const { name, company, map, link } = this.dataset;
+
+        detailName.textContent = name || 'Lokasi';
+        detailCompany.textContent = company || 'PT Solusi Bangun Indonesia Tbk';
+        mapFrame.src = map || '';
+        mapFrame.title = name || 'Lokasi perusahaan';
+        mapLink.href = link || '#';
+
+        locationButtons.forEach(item => item.classList.toggle('active', item === this));
+      });
+    });
+  }
+
+
 })();
