@@ -639,20 +639,29 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+    <!-- Pop-up Konfirmasi Instagram -->
   <div class="instagram-confirmation" id="instagram-confirmation" hidden aria-hidden="true">
     <section class="instagram-confirmation__dialog" role="dialog" aria-modal="true" aria-labelledby="instagram-confirmation-title" aria-describedby="instagram-confirmation-message">
+
       <button type="button" class="instagram-confirmation__close" aria-label="Tutup popup" data-instagram-confirm-close>
         <i class="bi bi-x-lg" aria-hidden="true"></i>
       </button>
+
       <div class="instagram-confirmation__icon" aria-hidden="true">
         <i class="bi bi-box-arrow-up-right"></i>
       </div>
+
       <h2 id="instagram-confirmation-title">Anda akan meninggalkan website ini</h2>
-      <p id="instagram-confirmation-message">Anda akan diarahkan ke Instagram untuk menonton video melalui aplikasi atau halaman Instagram. Apakah Anda yakin ingin melanjutkan?</p>
+
+      <p id="instagram-confirmation-message">
+        Anda akan diarahkan ke Instagram untuk menonton video melalui aplikasi atau halaman Instagram. Apakah Anda yakin ingin melanjutkan?
+      </p>
+
       <div class="instagram-confirmation__actions">
-        <button type="button" class="instagram-confirmation__cancel" data-instagram-confirm-close>Batal</button>
+        <button type="button" class="instagram-confirmation__cancel" data-instagram-confirm-close>
+          Batal
+        </button>
+
         <a class="instagram-confirmation__continue" href="https://www.instagram.com/reel/DZq7GQgB9ld/?obrf=MThhd2R4djdkZ2I1ZA==" target="_blank" rel="noopener noreferrer">
           <i class="bi bi-instagram" aria-hidden="true"></i>
           <span>Ya, Lanjutkan</span>
@@ -660,121 +669,9 @@
       </div>
     </section>
   </div>
-  <script>
-    (function() {
-      const triggers = document.querySelectorAll('.video-trigger, .video-trigger-inline');
-      const embedHost = document.querySelector('.video-embed');
-      const fallback = document.querySelector('.video-fallback');
-      const instagramTriggers = document.querySelectorAll('.instagram-confirm-trigger');
-      const instagramConfirmation = document.getElementById('instagram-confirmation');
-      const instagramConfirmationCloseButtons = document.querySelectorAll('[data-instagram-confirm-close]');
-      const instagramConfirmationContinue = instagramConfirmation
-        ? instagramConfirmation.querySelector('.instagram-confirmation__continue')
-        : null;
-      let lastInstagramTrigger = null;
 
-      function openVideo(trigger) {
-        if (!embedHost || !trigger) return;
-        const embedUrl = trigger.dataset.embed;
-        if (!embedUrl) return;
-
-        if (!embedHost.dataset.loaded) {
-          const iframe = document.createElement('iframe');
-          iframe.src = embedUrl;
-          iframe.title = 'Instagram Reel';
-          iframe.loading = 'lazy';
-          iframe.allow = 'autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share';
-          iframe.allowFullscreen = true;
-          iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-          embedHost.innerHTML = '';
-          embedHost.appendChild(iframe);
-          embedHost.dataset.loaded = 'true';
-        }
-
-        if (fallback) {
-          fallback.classList.add('d-none');
-        }
-      }
-
-      triggers.forEach(trigger => {
-        trigger.addEventListener('click', function(event) {
-          event.preventDefault();
-          openVideo(this);
-        });
-      });
-
-      if (fallback) {
-        setTimeout(() => {
-          if (!embedHost || !embedHost.dataset.loaded) {
-            fallback.classList.remove('d-none');
-          }
-        }, 2200);
-      }
-
-      function closeInstagramConfirmation() {
-        if (!instagramConfirmation || instagramConfirmation.hidden) return;
-
-        instagramConfirmation.classList.remove('is-open');
-        instagramConfirmation.hidden = true;
-        instagramConfirmation.setAttribute('aria-hidden', 'true');
-        if (lastInstagramTrigger) lastInstagramTrigger.focus();
-      }
-
-      instagramTriggers.forEach(trigger => {
-        trigger.addEventListener('click', function() {
-          if (!instagramConfirmation) return;
-
-          lastInstagramTrigger = this;
-          instagramConfirmation.hidden = false;
-          instagramConfirmation.setAttribute('aria-hidden', 'false');
-          requestAnimationFrame(() => instagramConfirmation.classList.add('is-open'));
-          instagramConfirmation.querySelector('.instagram-confirmation__close').focus();
-        });
-      });
-
-      instagramConfirmationCloseButtons.forEach(button => {
-        button.addEventListener('click', closeInstagramConfirmation);
-      });
-
-      if (instagramConfirmation) {
-        instagramConfirmation.addEventListener('click', function(event) {
-          if (event.target === instagramConfirmation) closeInstagramConfirmation();
-        });
-
-        document.addEventListener('keydown', function(event) {
-          if (event.key === 'Escape' && !instagramConfirmation.hidden) {
-            closeInstagramConfirmation();
-          }
-        });
-      }
-
-      if (instagramConfirmationContinue) {
-        instagramConfirmationContinue.addEventListener('click', closeInstagramConfirmation);
-      }
-
-      const locationButtons = document.querySelectorAll('.location-item');
-      const detailName = document.getElementById('detail-name');
-      const detailCompany = document.getElementById('detail-company');
-      const mapFrame = document.getElementById('map-frame');
-      const mapLink = document.getElementById('map-link');
-
-      if (locationButtons.length && detailName && detailCompany && mapFrame && mapLink) {
-        locationButtons.forEach(button => {
-          button.addEventListener('click', function() {
-            const { name, company, map, link } = this.dataset;
-
-            detailName.textContent = name || 'Lokasi';
-            detailCompany.textContent = company || 'PT Solusi Bangun Indonesia Tbk';
-            mapFrame.src = map || '';
-            mapFrame.title = name || 'Lokasi perusahaan';
-            mapLink.href = link || '#';
-
-            locationButtons.forEach(item => item.classList.toggle('active', item === this));
-          });
-        });
-      }
-    })();
-  </script>
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
 
 </body>
 
