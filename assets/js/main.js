@@ -339,12 +339,12 @@
     });
   });
 
-  // Mengatur tombol penutup pop-up
+
   instagramConfirmationCloseButtons.forEach(button => {
     button.addEventListener('click', closeInstagramConfirmation);
   });
 
-  // Menutup pop-up melalui klik di luar area atau tombol Escape
+
   if (instagramConfirmation) {
     instagramConfirmation.addEventListener('click', function(event) {
       if (event.target === instagramConfirmation) closeInstagramConfirmation();
@@ -357,7 +357,7 @@
     });
   }
 
-  // Menutup pop-up ketika tombol lanjutkan ditekan
+ 
   if (instagramConfirmationContinue) {
     instagramConfirmationContinue.addEventListener('click', closeInstagramConfirmation);
   }
@@ -386,5 +386,130 @@
     });
   }
 
+  const contactMessageForm = document.getElementById('contact-message-form');
+  if (contactMessageForm) {
+    const contactFormStatus = contactMessageForm.querySelector('.contact-form-status');
+    const contactSubmitButton = contactMessageForm.querySelector('.contact-submit-button');
+    const contactSubmitLabel = contactMessageForm.querySelector('.contact-submit-label');
+    const contactSubmitLoading = contactMessageForm.querySelector('.contact-submit-loading');
+    const contactSubmitArrow = contactMessageForm.querySelector('.contact-submit-arrow');
+    const contactStatusIcon = contactFormStatus.querySelector('.contact-form-status-icon');
+    const contactStatusTitle = contactFormStatus.querySelector('.contact-form-status-title');
+    const contactStatusMessage = contactFormStatus.querySelector('.contact-form-status-message');
+    const emailjsConfig = {
+      publicKey: '_VMSv5MdCwslYutsN',
+      serviceId: '12345678',
+      templateId: 'template_pzf2dft',
+      recipient: 'aisarahmah11@gmail.com'
+    };
+    let isSendingContactMessage = false;
+    let emailjsInitializationError = false;
+
+    if (window.emailjs && typeof window.emailjs.init === 'function') {
+      try {
+        window.emailjs.init({ publicKey: emailjsConfig.publicKey });
+      } catch {
+        emailjsInitializationError = true;
+      }
+    }
+
+    function showContactFormStatus(type, title, message) {
+      contactFormStatus.classList.remove('is-error', 'is-success');
+      contactFormStatus.classList.add(`is-${type}`);
+      contactStatusIcon.className = `contact-form-status-icon bi ${type === 'success' ? 'bi-check-lg' : 'bi-exclamation-lg'}`;
+      contactStatusTitle.textContent = title;
+      contactStatusMessage.textContent = message;
+      contactFormStatus.hidden = false;
+    }
+
+    function setContactFormLoading(isLoading) {
+      isSendingContactMessage = isLoading;
+      contactSubmitButton.disabled = isLoading;
+      contactMessageForm.setAttribute('aria-busy', String(isLoading));
+      contactSubmitLabel.hidden = isLoading;
+      contactSubmitLoading.hidden = !isLoading;
+      contactSubmitArrow.hidden = isLoading;
+    }
+
+    contactMessageForm.addEventListener('submit', async function(event) {
+      event.preventDefault();
+      if (isSendingContactMessage) return;
+
+      contactFormStatus.hidden = true;
+      contactFormStatus.classList.remove('is-error', 'is-success');
+
+      const nameField = contactMessageForm.elements.namedItem('name');
+      const emailField = contactMessageForm.elements.namedItem('email');
+      const subjectField = contactMessageForm.elements.namedItem('subject');
+      const messageField = contactMessageForm.elements.namedItem('message');
+      const requiredFields = [
+        ['Nama Lengkap', nameField],
+        ['Email', emailField],
+        ['Subjek', subjectField],
+        ['Pesan', messageField]
+      ];
+      const emptyFields = requiredFields.filter(([, field]) => !field.value.trim());
+
+      if (emptyFields.length) {
+        showContactFormStatus('error', 'Periksa Formulir', `Mohon lengkapi kolom berikut: ${emptyFields.map(([label]) => label).join(', ')}.`);
+        emptyFields[0][1].focus();
+        return;
+      }
+
+      const name = nameField.value.trim();
+      const email = emailField.value.trim();
+      const subject = subjectField.value.trim();
+      const message = messageField.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        showContactFormStatus('error', 'Periksa Formulir', 'Masukkan alamat email dengan format yang valid.');
+        emailField.focus();
+        return;
+      }
+
+      if (emailjsInitializationError || !window.emailjs || typeof window.emailjs.send !== 'function') {
+        showContactFormStatus(
+          'error',
+          'Pesan Gagal Dikirim!',
+          'Maaf, pesan Anda belum berhasil dikirim. Silakan coba kembali beberapa saat lagi.'
+        );
+        return;
+      }
+
+      setContactFormLoading(true);
+      try {
+        const response = await window.emailjs.send(
+          emailjsConfig.serviceId,
+          emailjsConfig.templateId,
+          {
+            to_email: emailjsConfig.recipient,
+            from_name: name,
+            from_email: email,
+            subject,
+            message
+          },
+          { publicKey: emailjsConfig.publicKey }
+        );
+
+        if (response.status < 200 || response.status >= 300) {
+          throw new Error(`EmailJS returned status ${response.status}`);
+        }
+
+        contactMessageForm.reset();
+        showContactFormStatus(
+          'success',
+          'Pesan Berhasil Dikirim!',
+          'Terima kasih telah menghubungi kami. Pesan Anda berhasil dikirim dan akan segera kami tindak lanjuti.'
+        );
+      } catch {
+        showContactFormStatus(
+          'error',
+          'Pesan Gagal Dikirim!',
+          'Maaf, pesan Anda belum berhasil dikirim. Silakan coba kembali beberapa saat lagi.'
+        );
+      } finally {
+        setContactFormLoading(false);
+      }
+    });
+  }
 
 })();
