@@ -204,6 +204,173 @@
       color: var(--brand-ink);
     }
 
+    .btn-instagram-play {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      width: fit-content;
+      max-width: 100%;
+      margin: 1rem auto 0;
+      padding: 0.75rem 1.25rem;
+      border: 1px solid var(--brand-green);
+      border-radius: 999px;
+      background: var(--brand-green);
+      color: #fff;
+      font-weight: 700;
+      transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-instagram-play:hover,
+    .btn-instagram-play:focus-visible {
+      border-color: var(--brand-green-deep);
+      background: var(--brand-green-deep);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .instagram-confirmation {
+      position: fixed;
+      z-index: 1100;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      overflow-y: auto;
+      padding: 1.25rem;
+      background: rgba(10, 22, 17, 0.68);
+      opacity: 0;
+      transition: opacity 0.22s ease;
+    }
+
+    .instagram-confirmation[hidden] {
+      display: none;
+    }
+
+    .instagram-confirmation.is-open {
+      opacity: 1;
+    }
+
+    .instagram-confirmation__dialog {
+      position: relative;
+      width: min(100%, 480px);
+      padding: 2rem;
+      border: 1px solid rgba(17,75,56,0.1);
+      border-radius: 24px;
+      background: #fff;
+      box-shadow: 0 24px 70px rgba(0,0,0,0.24);
+      color: var(--brand-ink);
+      text-align: center;
+      transform: scale(0.94);
+      transition: transform 0.22s ease;
+    }
+
+    .instagram-confirmation.is-open .instagram-confirmation__dialog {
+      transform: scale(1);
+    }
+
+    .instagram-confirmation__close {
+      position: absolute;
+      top: 0.85rem;
+      right: 0.85rem;
+      display: grid;
+      width: 40px;
+      height: 40px;
+      place-items: center;
+      border: 0;
+      border-radius: 50%;
+      background: var(--brand-green-soft);
+      color: var(--brand-green-deep);
+    }
+
+    .instagram-confirmation__icon {
+      display: grid;
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 1rem;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--brand-green-soft);
+      color: var(--brand-green);
+      font-size: 1.4rem;
+    }
+
+    .instagram-confirmation__dialog h2 {
+      margin: 0 2rem 0.75rem;
+      color: var(--brand-green-deep);
+      font-size: clamp(1.25rem, 3vw, 1.6rem);
+      font-weight: 700;
+    }
+
+    .instagram-confirmation__dialog p {
+      margin-bottom: 1.5rem;
+      color: var(--brand-muted);
+      line-height: 1.65;
+    }
+
+    .instagram-confirmation__actions {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    .instagram-confirmation__cancel,
+    .instagram-confirmation__continue {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.1rem;
+      border: 1px solid var(--brand-green);
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .instagram-confirmation__cancel {
+      background: #fff;
+      color: var(--brand-green-deep);
+    }
+
+    .instagram-confirmation__cancel:hover {
+      background: var(--brand-green-soft);
+    }
+
+    .instagram-confirmation__continue {
+      background: var(--brand-green);
+      color: #fff;
+    }
+
+    .instagram-confirmation__continue:hover {
+      border-color: var(--brand-green-deep);
+      background: var(--brand-green-deep);
+      color: #fff;
+    }
+
+    @media (max-width: 480px) {
+      .instagram-confirmation__dialog {
+        padding: 1.75rem 1.25rem;
+      }
+
+      .instagram-confirmation__actions {
+        flex-direction: column-reverse;
+      }
+
+      .instagram-confirmation__cancel,
+      .instagram-confirmation__continue {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .instagram-confirmation,
+      .instagram-confirmation__dialog,
+      .btn-instagram-play {
+        transition: none;
+      }
+    }
+
     .featured-services .section-title,
     .about .section-title,
     .structure .section-title,

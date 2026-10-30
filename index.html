@@ -167,9 +167,13 @@
                   </div>
                 </figcaption>
               </figure>
+              <button type="button" class="btn btn-instagram-play instagram-confirm-trigger" aria-haspopup="dialog" aria-controls="instagram-confirmation">
+                <i class="bi bi-instagram" aria-hidden="true"></i>
+                <span>Putar di Instagram</span>
+              </button>
               <div class="video-fallback d-none">
                 <p>Video tidak dapat ditampilkan di dalam halaman. Anda tetap dapat menontonnya langsung di Instagram.</p>
-                <a href="https://www.instagram.com/reel/DZq7GQgB9ld/" target="_blank" rel="noreferrer" class="btn btn-primary-ghost">Buka di Instagram</a>
+                <button type="button" class="btn btn-primary-ghost instagram-confirm-trigger">Buka di Instagram</button>
               </div>
             </aside>
           </div>
@@ -637,11 +641,37 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <div class="instagram-confirmation" id="instagram-confirmation" hidden aria-hidden="true">
+    <section class="instagram-confirmation__dialog" role="dialog" aria-modal="true" aria-labelledby="instagram-confirmation-title" aria-describedby="instagram-confirmation-message">
+      <button type="button" class="instagram-confirmation__close" aria-label="Tutup popup" data-instagram-confirm-close>
+        <i class="bi bi-x-lg" aria-hidden="true"></i>
+      </button>
+      <div class="instagram-confirmation__icon" aria-hidden="true">
+        <i class="bi bi-box-arrow-up-right"></i>
+      </div>
+      <h2 id="instagram-confirmation-title">Anda akan meninggalkan website ini</h2>
+      <p id="instagram-confirmation-message">Anda akan diarahkan ke Instagram untuk menonton video melalui aplikasi atau halaman Instagram. Apakah Anda yakin ingin melanjutkan?</p>
+      <div class="instagram-confirmation__actions">
+        <button type="button" class="instagram-confirmation__cancel" data-instagram-confirm-close>Batal</button>
+        <a class="instagram-confirmation__continue" href="https://www.instagram.com/reel/DZq7GQgB9ld/?obrf=MThhd2R4djdkZ2I1ZA==" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-instagram" aria-hidden="true"></i>
+          <span>Ya, Lanjutkan</span>
+        </a>
+      </div>
+    </section>
+  </div>
   <script>
     (function() {
       const triggers = document.querySelectorAll('.video-trigger, .video-trigger-inline');
       const embedHost = document.querySelector('.video-embed');
       const fallback = document.querySelector('.video-fallback');
+      const instagramTriggers = document.querySelectorAll('.instagram-confirm-trigger');
+      const instagramConfirmation = document.getElementById('instagram-confirmation');
+      const instagramConfirmationCloseButtons = document.querySelectorAll('[data-instagram-confirm-close]');
+      const instagramConfirmationContinue = instagramConfirmation
+        ? instagramConfirmation.querySelector('.instagram-confirmation__continue')
+        : null;
+      let lastInstagramTrigger = null;
 
       function openVideo(trigger) {
         if (!embedHost || !trigger) return;
@@ -679,6 +709,47 @@
             fallback.classList.remove('d-none');
           }
         }, 2200);
+      }
+
+      function closeInstagramConfirmation() {
+        if (!instagramConfirmation || instagramConfirmation.hidden) return;
+
+        instagramConfirmation.classList.remove('is-open');
+        instagramConfirmation.hidden = true;
+        instagramConfirmation.setAttribute('aria-hidden', 'true');
+        if (lastInstagramTrigger) lastInstagramTrigger.focus();
+      }
+
+      instagramTriggers.forEach(trigger => {
+        trigger.addEventListener('click', function() {
+          if (!instagramConfirmation) return;
+
+          lastInstagramTrigger = this;
+          instagramConfirmation.hidden = false;
+          instagramConfirmation.setAttribute('aria-hidden', 'false');
+          requestAnimationFrame(() => instagramConfirmation.classList.add('is-open'));
+          instagramConfirmation.querySelector('.instagram-confirmation__close').focus();
+        });
+      });
+
+      instagramConfirmationCloseButtons.forEach(button => {
+        button.addEventListener('click', closeInstagramConfirmation);
+      });
+
+      if (instagramConfirmation) {
+        instagramConfirmation.addEventListener('click', function(event) {
+          if (event.target === instagramConfirmation) closeInstagramConfirmation();
+        });
+
+        document.addEventListener('keydown', function(event) {
+          if (event.key === 'Escape' && !instagramConfirmation.hidden) {
+            closeInstagramConfirmation();
+          }
+        });
+      }
+
+      if (instagramConfirmationContinue) {
+        instagramConfirmationContinue.addEventListener('click', closeInstagramConfirmation);
       }
 
       const locationButtons = document.querySelectorAll('.location-item');
