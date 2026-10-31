@@ -266,7 +266,6 @@
 
   const triggers = document.querySelectorAll('.video-trigger, .video-trigger-inline');
   const embedHost = document.querySelector('.video-embed');
-  const fallback = document.querySelector('.video-fallback');
   const instagramTriggers = document.querySelectorAll('.instagram-confirm-trigger');
   const instagramConfirmation = document.getElementById('instagram-confirmation');
   const instagramConfirmationCloseButtons = document.querySelectorAll('[data-instagram-confirm-close]');
@@ -293,10 +292,6 @@
       embedHost.appendChild(iframe);
       embedHost.dataset.loaded = 'true';
     }
-
-    if (fallback) {
-      fallback.classList.add('d-none');
-    }
   }
 
   // Mengatur tombol pemutar video
@@ -307,14 +302,6 @@
     });
   });
 
-  // Menampilkan video alternatif jika embed belum berhasil dimuat
-  if (fallback) {
-    setTimeout(() => {
-      if (!embedHost || !embedHost.dataset.loaded) {
-        fallback.classList.remove('d-none');
-      }
-    }, 2200);
-  }
 
   // Fungsi untuk menutup pop-up Instagram
   function closeInstagramConfirmation() {

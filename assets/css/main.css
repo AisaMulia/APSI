@@ -2621,31 +2621,43 @@ section,
   transform: scaleX(1);
 }
 
+/* Sejajarkan kartu sejarah dengan video dan tombol Instagram */
+.about .intro-card {
+  height: 100%;
+}
+
 .about .showcase {
   position: relative;
   height: 100%;
+  min-height: 0;
   display: grid;
-  grid-template-rows: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 12px;
 }
 
 .about .showcase .showcase-main {
   position: relative;
-  display: grid;
-  grid-template-rows: minmax(0, 1fr) auto;
+  display: block;
+  width: 100%;
   height: 100%;
-  gap: 12px;
-  margin: 0;
   min-height: 0;
+  margin: 0;
   overflow: hidden;
-  border-radius: calc(var(--card-radius) + 4px);
+  border-radius: 24px;
   border: 1px solid var(--soft-border);
   box-shadow: 0 24px 50px color-mix(in srgb, var(--default-color), transparent 88%);
 }
 
+.about .showcase .showcase-main .video-embed {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
 .about .showcase .instagram-confirm-trigger {
-  justify-self: center;
-  width: max-content;
-  margin: 0 0 2px;
+  width: 100%;
+  margin: 0;
+  justify-self: stretch;
 }
 
 @media (max-width: 991px) {
@@ -2655,7 +2667,32 @@ section,
 
   .about .showcase .showcase-main {
     height: auto;
-    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+}
+.location-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.location-heading .detail-label,
+.location-heading h3,
+.location-heading .detail-company {
+  margin: 0;
+  display: inline;
+}
+
+.location-heading .location-divider {
+  opacity: 0.6;
+}
+
+@media (max-width: 576px) {
+  .location-heading {
+    gap: 6px;
   }
 }
 
@@ -5935,6 +5972,142 @@ section,
   margin-bottom: 0;
 }
 
-/*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
+/* =========================================
+   PENGATURAN WARNA SECTION WEBSITE
+   ========================================= */
+
+/* HIJAU GELAP: BERANDA */
+#hero {
+  background: #1D4530;
+  --default-color: #FFFFFF;
+  --heading-color: #FFFFFF;
+  --background-color: #1D4530;
+}
+
+/* PUTIH: PERUSAHAAN */
+#about {
+  background: #FFFFFF;
+  --default-color: #33463D;
+  --heading-color: #163327;
+  --background-color: #FFFFFF;
+}
+
+/* HIJAU GELAP: PRODUK */
+#featured-services {
+  background: #1D4530;
+  --default-color: #FFFFFF;
+  --heading-color: #FFFFFF;
+  --background-color: #1D4530;
+}
+
+/* PUTIH: STRUKTUR */
+#structure {
+  background: #FFFFFF;
+  --default-color: #33463D;
+  --heading-color: #163327;
+  --background-color: #FFFFFF;
+}
+
+/* HIJAU GELAP: KOMITMEN */
+#clients {
+  background: #1D4530;
+  --default-color: #FFFFFF;
+  --heading-color: #FFFFFF;
+  --background-color: #1D4530;
+}
+
+/* PUTIH: LOKASI */
+#locations {
+  background: #FFFFFF;
+  --default-color: #33463D;
+  --heading-color: #163327;
+  --background-color: #FFFFFF;
+}
+
+/* HIJAU GELAP: KONTAK */
+#contact {
+  background: #1D4530;
+  --default-color: #FFFFFF;
+  --heading-color: #FFFFFF;
+  --background-color: #1D4530;
+}
+
+/* =========================================
+   KARTU PRODUK
+   ========================================= */
+
+#featured-services .product-item,
+#clients .product-item {
+  background: #FFFFFF;
+  color: #33463D;
+}
+
+#featured-services .product-item h3,
+#clients .product-item h3 {
+  color: #163327;
+}
+
+#featured-services .product-item p,
+#clients .product-item p {
+  color: #33463D;
+}
+
+/* =========================================
+   KARTU STRUKTUR
+   ========================================= */
+
+#structure .structure-card,
+#structure .philosophy-panel {
+  background: #FFFFFF;
+  color: #33463D;
+}
+
+#structure .structure-card h3,
+#structure .philosophy-panel h3 {
+  color: #163327;
+}
+
+/* =========================================
+   WARNA TEKS LOKASI
+   ========================================= */
+
+#locations,
+#locations p,
+#locations span,
+#locations li {
+  color: #33463D;
+}
+
+#locations h1,
+#locations h2,
+#locations h3,
+#locations h4 {
+  color: #163327;
+}
+/* PAKSA WARNA TEKS SECTION LOKASI MENJADI GELAP */
+#locations,
+#locations.dark-background {
+  --default-color: #33463D !important;
+  --heading-color: #163327 !important;
+  --contrast-color: #163327 !important;
+  color: #33463D !important;
+}
+
+#locations h1,
+#locations h2,
+#locations h3,
+#locations h4,
+#locations h5,
+#locations h6,
+#locations p,
+#locations span,
+#locations li,
+#locations label,
+#locations .section-title,
+#locations .section-title * {
+  color: #33463D !important;
+}
+
+#locations a:not(.location-actions a) {
+  color: #1D4530 !important;
+}
