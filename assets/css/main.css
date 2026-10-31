@@ -6316,3 +6316,199 @@ section,
   object-fit: contain;
   margin: 0 auto;
 }
+/* MEMPERBESAR TAMPILAN BERANDA */
+@media (min-width: 1200px) {
+
+  /* Area utama beranda */
+  #hero {
+    padding-top: 90px !important;
+    padding-bottom: 90px !important;
+    min-height: 680px;
+    display: flex;
+    align-items: center;
+  }
+
+  #hero .container {
+    max-width: 1500px;
+    width: 94%;
+  }
+
+  /* Memperbesar kotak teks */
+  #hero .hero-content {
+    padding: 45px !important;
+    min-height: 500px;
+  }
+
+  /* Memperbesar judul */
+  #hero h1 {
+    font-size: 48px !important;
+    line-height: 1;
+  }
+
+  /* Memperbesar deskripsi */
+  #hero p {
+    font-size: 20px !important;
+    line-height: 0.8;
+  }
+
+  /* Memperbesar tombol */
+  #hero .btn {
+    font-size: 17px;
+    padding: 16px 24px;
+  }
+
+  /* Memperbesar gambar utama */
+  #hero .hero-image img,
+  #hero .hero-visual img {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+/* MEMPERPENDEK JARAK SECTION PERUSAHAAN */
+#about {
+  padding-top: 25px !important;
+  padding-bottom: 45px !important;
+}
+
+/* Judul dan deskripsi perusahaan */
+#about > .section-title {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+#about > .section-title h2 {
+  margin-bottom: 12px !important;
+}
+
+#about > .section-title p {
+  font-size: 20px !important;
+  line-height: 1.6 !important;
+  margin: 12px auto 0 !important;
+  padding: 0 !important;
+  max-width: 1350px;
+}
+
+/* Container sejarah dan video */
+#about > .container:not(.section-title) {
+  margin-top: 13px !important;
+  padding-top: 0 !important;
+}
+
+#about > .container:not(.section-title) > .row {
+  margin-top: 0 !important;
+}
+
+/* Memperpendek jarak judul dan deskripsi ke gambar produk */
+.featured-services .section-title {
+    margin-bottom: 0.4rem !important;
+    padding-bottom: 0.4rem !important;
+}
+
+.featured-services .section-title h2 {
+    margin-bottom: 0.4rem;
+}
+
+.featured-services .section-title p {
+    margin-bottom: 0.4;
+}
+
+/* Memperbesar teks deskripsi Produk & Layanan */
+.featured-services .section-title p {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+}
+
+
+/* ===== PENYESUAIAN STRUKTUR ORGANISASI & GRUP ===== */
+
+/* Memperpendek jarak judul, deskripsi, dan gambar */
+.structure .section-title {
+    margin-bottom: 1rem !important;
+    padding-bottom: 0 !important;
+}
+
+/* Memperbesar tulisan deskripsi */
+.structure .section-title p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Menyamakan ukuran kotak Struktur Organisasi dan Struktur Grup */
+.structure .row {
+    align-items: stretch;
+}
+
+.structure .row > div {
+    display: flex;
+}
+
+.structure .row > div > * {
+    width: 100%;
+}
+
+/* Menyamakan ukuran area gambar */
+.structure img {
+    width: 100%;
+    height: 380px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Menyamakan tinggi panel kedua struktur */
+.structure .card,
+.structure .structure-card {
+    height: 100%;
+}
+
+/* Memperpendek jarak Struktur Organisasi ke Logo */
+#structure > .container.mt-5 {
+    margin-top: 0.5rem !important;
+}
+
+/* Mengurangi jarak bawah kartu struktur */
+#structure .structure-card {
+    margin-bottom: 0;
+}
+
+/* Merapikan posisi gambar filosofi logo */
+#structure .logo-philosophy {
+    display: block;
+    margin-top: 0;
+}
+
+/* Mengatur jarak bagian Struktur */
+#structure {
+    padding-bottom: 5px !important;
+}
+
+/* Mengatur posisi Logo & Filosofi Logo */
+#structure .container.mt-0 {
+    margin-top: 5px !important;
+    padding-top: 0 !important;
+}
+
+/* Nomor telepon footer tanpa tombol */
+.footer .footer-phone {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    color: #33463D;
+    font-size: 1rem;
+}
+
+.footer .footer-phone i {
+    color: #1D6F4D;
+    font-size: 1.1rem;
+}
+
+.footer .footer-phone a {
+    color: #33463D;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer .footer-phone a:hover {
+    color: #1D6F4D;
+}
