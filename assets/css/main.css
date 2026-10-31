@@ -6447,13 +6447,45 @@ section,
     width: 100%;
 }
 
-/* Menyamakan ukuran area gambar */
-.structure img {
+
+/* Mengatur gambar Struktur Organisasi dan Struktur Grup */
+#structure .structure-card img {
     width: 100%;
     height: 380px;
     object-fit: contain;
     display: block;
 }
+
+/* Memperkecil area gambar filosofi logo */
+#structure .logo-philosophy {
+    width: 100%;
+    height: 220px !important;
+    object-fit: contain;
+    display: block;
+    margin: 0;
+}
+
+/* Memperpendek jarak antara kartu struktur dan filosofi logo */
+#structure .container[data-aos-delay="150"] {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Mengurangi ruang kosong bawah bagian struktur */
+#structure {
+    padding-bottom: 15px !important;
+}
+
+/* Mengurangi ruang kosong atas bagian komitmen */
+#clients {
+    padding-top: 15px !important;
+}
+
+/* Merapikan panel filosofi logo */
+#structure .philosophy-panel {
+    padding: 1.25rem !important;
+}
+
 
 /* Menyamakan tinggi panel kedua struktur */
 .structure .card,
@@ -6511,4 +6543,130 @@ section,
 
 .footer .footer-phone a:hover {
     color: #1D6F4D;
+}
+
+/* ===== MERAPIKAN JARAK LOGO & FILOSOFI LOGO ===== */
+
+/* Memperpendek jarak dari kartu struktur ke logo */
+#structure > .container[data-aos-delay="150"] {
+    margin-top: 1.5rem !important;
+    padding-top: 0 !important;
+}
+
+/* Mengurangi ruang kosong dalam panel filosofi */
+#structure .philosophy-panel {
+    padding: 1rem 1.25rem !important;
+}
+
+#structure .philosophy-panel h3 {
+    margin-bottom: 0.5rem !important;
+}
+
+#structure .philosophy-panel p {
+    margin-bottom: 0 !important;
+}
+
+/* Memperpendek jarak bawah bagian struktur */
+#structure {
+    padding-bottom: 25px !important;
+}
+
+/* Memperpendek jarak atas bagian komitmen */
+#structure + #clients {
+    padding-top: 25px !important;
+}
+
+/* ===== MERAPIKAN JARAK BAGIAN LOKASI ===== */
+
+/* Memperpendek jarak judul dan deskripsi ke pilihan lokasi */
+#locations .section-title {
+    margin-bottom: 20px !important;
+    padding-bottom: 0 !important;
+}
+
+/* Menghilangkan jarak tambahan pada container pilihan lokasi */
+#locations > .container.position-relative {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Mengatur jarak antar pilihan lokasi dan peta */
+#locations .contact-location-panel {
+    margin-top: 0 !important;
+}
+
+/* Mengurangi ruang kosong bawah bagian lokasi */
+#locations {
+    padding-bottom: 35px !important;
+}
+
+/* ===== MERAPIKAN JARAK BAGIAN HUBUNGI KAMI ===== */
+
+/* Memperpendek jarak judul dan deskripsi ke panel kontak */
+#contact .section-title {
+    margin-bottom: 25px !important;
+    padding-bottom: 0 !important;
+}
+
+/* Menghilangkan jarak atas berlebih pada panel kontak */
+#contact .row {
+    margin-top: 0 !important;
+}
+
+/* Mengatur jarak bagian Hubungi Kami */
+#contact {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+}
+
+/* Menjaga posisi kedua panel tetap sejajar */
+#contact .info-wrap,
+#contact .contact-form {
+    margin-top: 0 !important;
+}
+
+/* Membuat teks sejarah perusahaan rata kanan-kiri */
+#about p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Membuat deskripsi produk dan layanan rata kanan-kiri */
+#featured-services .service-item p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* ===== TEKS LOGO & FILOSOFI LOGO ===== */
+#structure .philosophy-panel p,
+#structure .logo-philosophy-content p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* ===== TEKS BAGIAN KOMITMEN SBI ===== */
+#clients .section-title p,
+#clients .commitment-item p,
+#clients .service-item p,
+#clients .card p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Memastikan deskripsi kartu komitmen rata kanan-kiri */
+#clients p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+.footer a[href*="google.com/maps"] {
+    color: #7c8b8a !important;
+    text-decoration: none;
+}
+
+.footer a[href*="google.com/maps"]:visited {
+    color: #7c8b8a !important;
+}
+
+.footer a[href*="google.com/maps"]:hover {
+    color: #1b4d38 !important;
 }

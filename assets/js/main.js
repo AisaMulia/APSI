@@ -523,4 +523,51 @@ const scrollDirectionThreshold = 3;
 
     lastScrollPosition = currentScrollPosition;
   }, { passive: true });
+  
+  /* Menghubungkan lokasi footer dengan pilihan lokasi */
+  document.addEventListener('DOMContentLoaded', function () {
+
+      const footerLinks = document.querySelectorAll(
+          '.footer-location-link'
+      );
+
+      footerLinks.forEach(function (link) {
+
+          link.addEventListener('click', function (event) {
+              event.preventDefault();
+
+              const targetName = this.dataset.locationTarget;
+
+              // Mencari tombol lokasi berdasarkan nama
+              const locationItem = Array.from(
+                  document.querySelectorAll('.location-item')
+              ).find(function (item) {
+                  return item.dataset.name.trim() === targetName;
+              });
+
+              if (!locationItem) {
+                  console.warn('Lokasi tidak ditemukan:', targetName);
+                  return;
+              }
+
+              // Memilih lokasi sehingga detail dan peta diperbarui
+              locationItem.click();
+
+              // Mengarahkan halaman ke bagian Lokasi
+              const locationSection = document.querySelector('#locations');
+
+              if (locationSection) {
+                  history.replaceState(null, '', '#locations');
+
+                  locationSection.scrollIntoView({
+                      behavior: 'smooth',
+                      block: 'start'
+                  });
+              }
+          });
+
+      });
+
+  });
+
 })();
