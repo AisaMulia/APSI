@@ -499,4 +499,28 @@
     });
   }
 
+  let lastScrollPosition = window.scrollY;
+const scrollDirectionThreshold = 3;
+
+  window.addEventListener("scroll", function () {
+    if (window.innerWidth < 1200) return;
+
+    const currentScrollPosition = window.scrollY;
+    const scrollDifference = currentScrollPosition - lastScrollPosition;
+
+    if (currentScrollPosition < 100) {
+      document.body.classList.remove("header-hidden");
+      document.body.classList.add("header-visible");
+    } else if (scrollDifference > scrollDirectionThreshold) {
+      // Scroll ke bawah: header naik sedikit
+      document.body.classList.add("header-hidden");
+      document.body.classList.remove("header-visible");
+    } else if (scrollDifference < -scrollDirectionThreshold) {
+      // Scroll ke atas: header kembali normal
+      document.body.classList.remove("header-hidden");
+      document.body.classList.add("header-visible");
+    }
+
+    lastScrollPosition = currentScrollPosition;
+  }, { passive: true });
 })();

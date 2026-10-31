@@ -8,6 +8,10 @@
   <meta name="description" content="PT Solusi Bangun Indonesia Tbk menyediakan produk material konstruksi, solusi beton, semen, agregat, dan komitmen terhadap pembangunan berkelanjutan di Indonesia.">
   <meta name="keywords" content="Solusi Bangun Indonesia, semen, beton, agregat, konstruksi, Indonesia, berkelanjutan">
 
+   <!-- Favicons -->
+  <link href="assets/img/logo sbi.png" rel="icon">
+  <link href="assets/img/logi sbi.png" rel="apple-touch-icon">
+
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -34,46 +38,60 @@
 
 <body class="index-page">
   
+  
   <header id="header" class="header sticky-top">
     <div class="container-fluid container-xl position-relative">
 
       <div class="top-row d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center">
-          <img src="assets/img/logo perusahaan.jfif" alt="Logo PT Solusi Bangun Indonesia" class="brand-logo-img">
-          <h1 class="sitename">PT Solusi Bangun Indonesia Tbk</h1>
-        </a>
 
-        <div class="d-flex align-items-center">
+        <!-- LOGO DAN NAMA PERUSAHAAN -->
+        <div class="logo d-flex align-items-center">
+          <img src="assets/img/logo perusahaan.jfif"
+              alt="Logo PT Solusi Bangun Indonesia"
+              class="brand-logo-img">
+          <h1 class="sitename">PT Solusi Bangun Indonesia Tbk</h1>
+        </div>
+
+        <!-- NAVIGASI DAN MEDIA SOSIAL -->
+        <div class="header-right d-flex align-items-center">
+
+          <nav id="navmenu" class="navmenu">
+            <ul>
+              <li><a href="#hero" class="active">Beranda</a></li>
+              <li><a href="#about">Perusahaan</a></li>
+              <li><a href="#featured-services">Produk</a></li>
+              <li><a href="#structure">Struktur</a></li>
+              <li><a href="#clients">Komitmen</a></li>
+              <li><a href="#locations">Lokasi</a></li>
+              <li><a href="#contact">Kontak</a></li>
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+          </nav>
+
           <div class="social-links">
-            <a href="https://www.instagram.com/solusibangunid/" class="instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="https://www.facebook.com/p/PT-Solusi-Bangun-Indonesia-Tbk-61568142358066/?locale=id_ID" class="facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="https://id.linkedin.com/company/solusi-bangun-indonesia" class="linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.instagram.com/solusibangunid/"
+              class="instagram" target="_blank"
+              rel="noopener noreferrer" aria-label="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/p/PT-Solusi-Bangun-Indonesia-Tbk-61568142358066/?locale=id_ID"
+              class="facebook" target="_blank"
+              rel="noopener noreferrer" aria-label="Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://id.linkedin.com/company/solusi-bangun-indonesia"
+              class="linkedin" target="_blank"
+              rel="noopener noreferrer" aria-label="LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
           </div>
+
         </div>
       </div>
 
     </div>
-
-    <div class="nav-wrap">
-      <div class="container d-flex justify-content-center position-relative">
-        <nav id="navmenu" class="navmenu">
-          <ul>
-            <li><a href="#hero" class="active">Beranda</a></li>
-            <li><a href="#about">Perusahaan</a></li>
-            <li><a href="#featured-services">Produk</a></li>
-            <li><a href="#structure">Struktur</a></li>
-            <li><a href="#clients">Komitmen</a></li>
-            <li><a href="#locations">Lokasi</a></li>
-            <li><a href="#contact">Kontak</a></li>
-          </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        </nav>
-      </div>
-    </div>
-
   </header>
 
-  <main class="main">
 
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
@@ -95,12 +113,10 @@
                     <span>Lihat Produk</span>
                     <i class="bi bi-arrow-right ms-2"></i>
                   </a>
-                  <a href="#about" class="btn btn-video">
-                    <span class="play-icon d-inline-flex align-items-center justify-content-center me-2">
-                      <i class="bi bi-info-circle"></i>
-                    </span>
-                    <span>Profil SBI</span>
-                  </a>
+                 <a href="#contact" class="btn btn-kontak">
+                  <span>Kontak</span>
+                  <i class="bi bi-arrow-right ms-2"></i>
+                </a>
                 </div>
                 <div class="mini-stats d-flex flex-wrap gap-4 mt-4" data-aos="zoom-in" data-aos-delay="250">
                   <div class="stat d-flex align-items-center">
@@ -228,8 +244,8 @@
                 <h3>Semen</h3>
                 <p>Produk semen berkualitas untuk kebutuhan konstruksi umum, infrastruktur, serta bangunan komersial dan residensial.</p>
                 <div class="card-links">
-                  <a href="#contact" class="link-item">
-                    Konsultasi
+                  <a href="#contact" class="read-more">
+                    <span>Hubungi Kami</span>
                     <i class="bi bi-arrow-right"></i>
                   </a>
                 </div>
@@ -249,8 +265,8 @@
                 <h3>Beton</h3>
                 <p>Solusi beton siap pakai dan bahan bangunan dengan performa yang konsisten untuk proyek skala besar maupun spesifik.</p>
                 <div class="card-links">
-                  <a href="#contact" class="link-item">
-                    Konsultasi
+                  <a href="#contact" class="read-more">
+                    <span>Hubungi Kami</span>
                     <i class="bi bi-arrow-right"></i>
                   </a>
                 </div>
@@ -270,8 +286,8 @@
                 <h3>Agregat</h3>
                 <p>Agregat yang dibutuhkan untuk campuran beton, jalan, dan kebutuhan konstruksi lainnya dengan kualitas terukur.</p>
                 <div class="card-links">
-                  <a href="#contact" class="link-item">
-                    Konsultasi
+                  <a href="#contact" class="read-more">
+                    <span>Hubungi Kami</span>
                     <i class="bi bi-arrow-right"></i>
                   </a>
                 </div>
@@ -287,8 +303,8 @@
               <h3>Keberlanjutan</h3>
               <p>Komitmen pada praktik operasional yang ramah lingkungan, efisiensi sumber daya, dan pengelolaan yang berkelanjutan.</p>
               <div class="card-links">
-                <a href="#about" class="link-item">
-                  Selengkapnya
+                <a href="#contact" class="read-more">
+                  <span>Hubungi Kami</span>
                   <i class="bi bi-arrow-right"></i>
                 </a>
               </div>
@@ -303,8 +319,8 @@
               <h3>Inovasi &amp; Teknologi</h3>
               <p>Pengembangan produk dan proses yang mendukung kualitas, efisiensi operasional, serta kepuasan pelanggan dan mitra.</p>
               <div class="card-links">
-                <a href="#contact" class="link-item">
-                  Konsultasi
+                <a href="#contact" class="read-more">
+                  <span>Hubungi Kami</span>
                   <i class="bi bi-arrow-right"></i>
                 </a>
               </div>
@@ -319,8 +335,8 @@
               <h3>Pelayanan Pelanggan</h3>
               <p>Kami mendukung pelanggan melalui solusi teknis, koordinasi distribusi, dan pelayanan yang responsif di berbagai wilayah.</p>
               <div class="card-links">
-                <a href="#contact" class="link-item">
-                  Hubungi Kami
+                <a href="#contact" class="read-more">
+                  <span>Hubungi Kami</span>
                   <i class="bi bi-arrow-right"></i>
                 </a>
               </div>
@@ -536,12 +552,14 @@
                   <p>Kantor Pusat Jakarta, Jakarta, Indonesia</p>
                 </div>
               </div>
-
-              <a class="contact-location-link" href="#locations">
-                <i class="bi bi-map" aria-hidden="true"></i>
-                Lihat informasi lokasi
-              </a>
-            </div>
+              <div class="contact-cs-image">
+                <img src="assets/img/cs sbi.jfif" alt="Customer Service PT Solusi Bangun Indonesia">
+              </div>
+               <a class="contact-location-link" href="#locations">
+              <i class="bi bi-map" aria-hidden="true"></i>
+              Lihat informasi lokasi
+             </a>
+            </div>  
           </div>
 
           <div class="col-md-7">
@@ -647,7 +665,7 @@
 
         <div class="col-lg-2">
           <div class="footer-cta">
-            <h5>Hubungi</h5>
+            <h5>Telepon</h5>
             <a href="#contact" class="btn btn-outline">+62 21 29861000</a>
           </div>
         </div>

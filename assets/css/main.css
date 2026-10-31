@@ -1225,12 +1225,6 @@ h6 {
   }
 }
 
-.header .nav-wrap {
-  background-color: color-mix(in srgb, var(--default-color), transparent 96%);
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-}
 
 .header .mobile-nav-toggle {
   position: fixed;
@@ -6110,4 +6104,215 @@ section,
 
 #locations a:not(.location-actions a) {
   color: #1D4530 !important;
+}
+
+/* =========================================
+   HEADER DAN NAVIGASI SATU BARIS
+   ========================================= */
+
+@media (min-width: 1200px) {
+  #header {
+    padding: 12px 0;
+  }
+  /* HEADER BERGESER SEDIKIT SAAT SCROLL */
+  @media (min-width: 1200px) {
+    #header {
+      transition: transform 0.3s ease;
+    }
+
+    body.header-hidden #header {
+      transform: translateY(-18px);
+    }
+
+    body.header-visible #header {
+      transform: translateY(0);
+    }
+  }
+  #header .top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding-bottom: 0;
+    gap: 20px;
+  }
+
+  #header .top-row .logo {
+    flex-shrink: 0;
+  }
+
+  #header .header-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  #header .navmenu {
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+
+  #header .navmenu > ul {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+  }
+
+  #header .navmenu > ul > li > a {
+    padding: 12px 8px;
+    white-space: nowrap;
+    font-size: 14px;
+  }
+
+  #header .mobile-nav-toggle {
+    display: none !important;
+  }
+
+  #header .social-links {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+}
+
+/* Navigasi mobile dan tablet tetap menggunakan menu hamburger */
+@media (max-width: 1199px) {
+  #header .top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #header .navmenu > ul {
+    display: none;
+  }
+
+}
+/* Deskripsi lokasi: lebih besar dan rata tengah */
+#locations .section-title p {
+  font-size: 1.15rem !important;
+  text-align: center;
+  margin: 20px auto 0;
+  max-width: 800px;
+  line-height: 1.6;
+}
+/* Memperbesar isi header tanpa menambah tinggi header */
+@media (min-width: 1200px) {
+  #header .brand-logo-img {
+    width: 66px;
+    height: 66px;
+    max-height: 66px;
+  }
+
+  #header .top-row .logo .sitename {
+    font-size: 26px;
+  }
+
+  #header .navmenu > ul > li > a {
+    font-size: 16px;
+  }
+
+  #header .social-links a {
+    font-size: 21px;
+  }
+}
+/* POSISI NAVIGASI TETAP DI TENGAH HEADER */
+@media (min-width: 1200px) {
+  #header .top-row {
+    height: 82px !important;
+    min-height: 82px !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  #header .header-right {
+    height: 100%;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  #header .navmenu,
+  #header .navmenu > ul,
+  #header .social-links {
+    height: 100%;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  #header .navmenu > ul > li {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  #header .navmenu > ul > li > a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+/* Turunkan seluruh isi header sedikit */
+@media (min-width: 1200px) {
+  #header .top-row {
+    transform: translateY(7px);
+  }
+}
+/* Tombol Kontak pada halaman Beranda */
+#hero .btn-kontak {
+  background-color: #1d6f4d !important;
+  color: #ffffff !important;
+  border: 1px solid #1d6f4d;
+  padding: 14px 22px;
+  border-radius: 10px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#hero .btn-kontak span,
+#hero .btn-kontak i {
+  color: #ffffff !important;
+}
+
+#hero .btn-kontak:hover {
+  background-color: #15583d !important;
+  border-color: #15583d;
+}
+/* Gambar Customer Service pada bagian Kontak */
+#contact .contact-cs-image {
+  margin-top: 25px;
+  width: 100%;
+  text-align: center;
+}
+
+#contact .contact-cs-image img {
+  width: 100%;
+  max-width: 360px;
+  height: 190px;
+  object-fit: contain;
+  border-radius: 12px;
+  display: block;
+}
+#contact .contact-cs-image {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 25px 0 20px 0;
+}
+
+#contact .contact-cs-image img {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  height: 190px;
+  object-fit: contain;
+  margin: 0 auto;
 }
